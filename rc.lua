@@ -192,7 +192,19 @@ awful.screen.connect_for_each_screen(function(s)
         screen  = s,
         filter  = awful.widget.taglist.filter.all,
         buttons = taglist_buttons,
-		layout  = wibox.layout.fixed.vertical()       
+		layout  = wibox.layout.fixed.vertical(),
+		widget_template = {
+  			{
+		  	  {
+				    id = 'text_role',
+				    widget = wibox.widget.textbox,
+				  },
+					widget = wibox.container.place,
+				  halign = 'center',	
+  			},
+  			id = 'background_role',
+  			widget = wibox.container.background,
+  		}       
     }
 
     -- Create a tasklist widget
